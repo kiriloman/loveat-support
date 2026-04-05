@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LovEat - Support</title>
+    <meta name="description" content="LovEat support page. Get help with the LovEat restaurant discovery app for Madeira Island.">
+    <link rel="icon" type="image/x-icon" href="https://loveat.pt/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f0f14;
+            --bg-card: #1a1a1f;
+            --bg-elevated: #242428;
+            --text: #e8e4dc;
+            --text-muted: #9d9792;
+            --primary: #d4a574;
+            --primary-dim: rgba(212, 165, 116, 0.12);
+            --border: #3a3a3e;
+            --radius: 12px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 48px 0 32px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+
+        /* About */
+        .about p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--primary-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        .contact-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-elevated);
+        }
+
+        .faq-chevron {
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 24px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Privacy & Terms */
+        .legal-content {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .legal-content h3 {
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+
+        .legal-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .legal-content p {
+            margin-bottom: 12px;
+        }
+
+        .legal-content ul {
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        .legal-content li {
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Nav links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            padding: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            header {
+                padding: 32px 0 24px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 36px 0;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .faq-question {
+                padding: 16px 20px;
+            }
+
+            .faq-answer {
+                padding: 0 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Lov<span>Eat</span></div>
+            <p>Discover restaurants in Madeira</p>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQ</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+            </nav>
+        </header>
+
+        <!-- About -->
+        <section id="about" class="about">
+            <h2>About LovEat</h2>
+            <p>LovEat helps you discover the best restaurants on Madeira Island, Portugal. Simply describe what you're craving in your own words — "spicy seafood with an ocean view" or "cozy place for traditional Madeiran food" — and our AI-powered search finds the perfect match.</p>
+            <p>We combine restaurant menus, real visitor reviews, and local knowledge to deliver recommendations you can trust. Whether you're a tourist exploring the island or a local looking for something new, LovEat is your personal dining guide.</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact Support</h2>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value"><a href="mailto:loveatapp@gmail.com">loveatapp@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                    </div>
+                    <div>
+                        <div class="contact-label">Response Time</div>
+                        <div class="contact-value">We typically respond within 24 hours</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How does LovEat search work?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="faq-answer">LovEat uses AI to understand natural language descriptions of what you're craving. It analyzes restaurant menus, visitor reviews, and venue details to find the best matches. You can search for specific dishes, cuisines, atmospheres, or any combination — just describe it in your own words.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Is LovEat free to use?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="faq-answer">Yes, LovEat is completely free to download and use. There are no subscription fees or in-app purchases.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Which areas does LovEat cover?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="faq-answer">LovEat currently covers Madeira Island, Portugal, including Funchal and surrounding areas. We're working on expanding to more regions in the future.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        Why does the app need my location?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="faq-answer">Location helps LovEat show you nearby restaurants and sort results by distance. You can also set your location manually if you prefer not to share GPS data. Location data is only used for search and is never stored on our servers.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        How do I report incorrect restaurant information?
+                        <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </button>
+                    <div class="faq-answer">If you notice incorrect details for a restaurant (wrong hours, closed permanently, etc.), please email us at <a href="mailto:loveatapp@gmail.com" style="color: var(--primary);">loveatapp@gmail.com</a> with the restaurant name and the issue. We'll update it as soon as possible.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy -->
+        <section id="privacy">
+            <h2>Privacy Policy</h2>
+            <div class="legal-content">
+                <p><em>Last updated: April 5, 2026</em></p>
+
+                <h3>Information We Collect</h3>
+                <p>LovEat collects minimal data to provide the service:</p>
+                <ul>
+                    <li><strong>Location data</strong> — Only when you grant permission, used solely to show nearby restaurants. Not stored on our servers.</li>
+                    <li><strong>Search queries</strong> — Processed to return results. Not linked to your identity.</li>
+                    <li><strong>Local storage</strong> — Recent searches and location preferences are stored on your device only.</li>
+                </ul>
+
+                <h3>Information We Do Not Collect</h3>
+                <ul>
+                    <li>We do not require account creation or login.</li>
+                    <li>We do not collect personal information such as name, email, or phone number.</li>
+                    <li>We do not use third-party analytics or advertising trackers.</li>
+                    <li>We do not sell or share data with third parties.</li>
+                </ul>
+
+                <h3>Data Storage</h3>
+                <p>All user preferences (recent searches, saved locations) are stored locally on your device. Our servers process search queries in real time and do not retain them.</p>
+
+                <h3>Third-Party Services</h3>
+                <p>LovEat uses map tiles from OpenStreetMap for displaying restaurant locations. OpenStreetMap's privacy policy applies to map tile requests. Restaurant data is sourced from publicly available information.</p>
+
+                <h3>Children's Privacy</h3>
+                <p>LovEat is not directed at children under 13 and does not knowingly collect data from children.</p>
+
+                <h3>Changes to This Policy</h3>
+                <p>We may update this policy from time to time. Changes will be reflected on this page with an updated date.</p>
+
+                <h3>Contact</h3>
+                <p>For privacy-related questions, contact us at <a href="mailto:loveatapp@gmail.com" style="color: var(--primary);">loveatapp@gmail.com</a>.</p>
+            </div>
+        </section>
+
+        <!-- Terms of Use -->
+        <section id="terms">
+            <h2>Terms of Use</h2>
+            <div class="legal-content">
+                <p><em>Last updated: April 5, 2026</em></p>
+
+                <h3>Acceptance of Terms</h3>
+                <p>By using LovEat, you agree to these terms. If you do not agree, please do not use the app.</p>
+
+                <h3>Description of Service</h3>
+                <p>LovEat is a free restaurant discovery tool for Madeira Island. It provides AI-powered search results based on publicly available restaurant information including menus, reviews, and location data.</p>
+
+                <h3>Accuracy of Information</h3>
+                <p>Restaurant information (menus, hours, prices, reviews) is sourced from public data and may not always be current. LovEat does not guarantee the accuracy of any restaurant details. We recommend confirming details directly with restaurants before visiting.</p>
+
+                <h3>Acceptable Use</h3>
+                <p>You agree not to misuse the service, including attempting to disrupt the service, scrape data, or use automated systems to access LovEat beyond normal app usage.</p>
+
+                <h3>Limitation of Liability</h3>
+                <p>LovEat is provided "as is" without warranties. We are not liable for any dining experiences, restaurant closures, inaccurate information, or any damages arising from the use of this app.</p>
+
+                <h3>Changes to Terms</h3>
+                <p>We may update these terms at any time. Continued use of LovEat after changes constitutes acceptance of the updated terms.</p>
+
+                <h3>Contact</h3>
+                <p>Questions about these terms can be directed to <a href="mailto:loveatapp@gmail.com" style="color: var(--primary);">loveatapp@gmail.com</a>.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 LovEat. All rights reserved.</p>
+            <p style="margin-top: 8px;"><a href="https://loveat.pt">loveat.pt</a></p>
+        </footer>
+    </div>
+</body>
+</html>
